@@ -1,7 +1,9 @@
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
-alias myrc="nano ~/.myrc && source ~/.myrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
-
+MYRC_HOME="~/myshortcuts"
+alias myrc="nano $MYRC_HOME/myrc.sh && source $MYRC_HOME/myrc.sh"
+alias sync_down="cd $MYRC_HOME && git pull --rebase"
+alias sync_up="cd $MYRC_HOME && git add myrc.sh && git commit -m 'syncing myrc.sh' && git push origin master"
 
 
 #-------------------- ls
