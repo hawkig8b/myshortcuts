@@ -39,6 +39,12 @@ alias gitss='git stash save'
 alias gitsp='git stash pop'
 alias gitsu='git submodule update --rebase --remote --recursive --init'
 
+#gradle
+alias gwb='./gradlew build -Dorg.gradle.daemon=true'
+alias gwcb='./gradlew clean build -Dorg.gradle.daemon=true'
+
 #-------------------- Miscellaneous
 alias ppjson='python -m json.tool'
 alias cnt="wc -l"
+alias toclipboard="xclip -selection c"
+alias fromclipboard="xclip -selection clipboard -o"
