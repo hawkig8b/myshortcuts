@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
 MYRC_HOME=${0:a:h}
