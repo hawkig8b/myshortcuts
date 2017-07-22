@@ -28,6 +28,8 @@ alias update='sudo apt-get update && sudo apt-get upgrade -y'
 alias apti='sudo apt install'
 
 #-------------------- Git
+git config user.name "hawkig8b"
+git config user.email "hawkig8b@gmail.com"
 alias gits='git status'
 alias gitl='git log --decorate --oneline --graph'
 alias gitco='git checkout'
