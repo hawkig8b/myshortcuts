@@ -3,7 +3,7 @@
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
 MYRC_HOME=${0:a:h}
-alias myrc="nano $MYRC_HOME/myrc.sh && source $MYRC_HOME/myrc.sh && syncup"
+alias myrc="nano -c $MYRC_HOME/myrc.sh && source $MYRC_HOME/myrc.sh && syncup"
 alias syncdown="cd $MYRC_HOME && git pull --rebase ; cd -"
 alias syncup="cd $MYRC_HOME && git add myrc.sh && git commit -m 'syncing myrc.sh' && git push origin master; cd -"
 
@@ -84,11 +84,16 @@ xclip #cl clipboard utility
 GREE_CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
 RED_CROSS_SIGN="\e[0;31m\xe2\x9c\x98\e[0m"
 
+
+function print_title_line {
+  echo "=================== ${@} ========================"
+}
+
 function install_apps {
   sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
-    print "=========================  installing " $item
+    print_title_line $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if $? -ne 0 ;then
       print $RED_CROSS_SIGN $item
