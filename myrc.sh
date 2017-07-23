@@ -72,8 +72,9 @@ xclip #cl clipboard utility
 )
 
 function install_apps {
+  rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
     echo "=========================  installing " $item
-    sudo apt-get install $item >/tmp/install_apps_out.log 2>/tmp/install_apps_err.log
+    sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   done
 }
