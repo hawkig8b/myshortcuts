@@ -54,3 +54,26 @@ alias ppjson='python -m json.tool'
 alias cnt="wc -l"
 alias toclipboard="xclip -selection c"
 alias fromclipboard="xclip -selection clipboard -o"
+
+
+
+#------------------------------------
+install_list=(
+
+glipper #multi-item clipboard utility
+guake #drop-down terminal shell
+regexxer #a gui-application to search text and replace in-place using regex.
+silversearcher-ag #cl regex search
+tree #print directory tree structure
+uget #a gui downlaod manager
+unp #cl unzip utility
+xclip #cl clipboard utility
+
+)
+
+
+function install_apps {
+  for item in $install_list do
+    echo "=========================  installing " $item
+    sudo apt install $item
+}
