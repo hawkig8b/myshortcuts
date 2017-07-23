@@ -69,6 +69,7 @@ glipper #multi-item clipboard utility
 guake #drop-down terminal shell
 htop #interactive process viewer
 inotify-tools #monitor file system for changes and run commands in response
+#while inotifywait -e modify <file or dir> ;do .... ; done
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
 tig #cl git tool
