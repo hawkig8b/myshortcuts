@@ -73,7 +73,8 @@ xclip #cl clipboard utility
 
 
 function install_apps {
-  for item in $install_list do
+  for item in $install_list ;do
     echo "=========================  installing " $item
     sudo apt install $item
+  done
 }
