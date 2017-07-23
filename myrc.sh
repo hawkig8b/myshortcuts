@@ -82,6 +82,7 @@ xclip #cl clipboard utility
 CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
 
 function install_apps {
+  sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
     print "=========================  installing " $item
