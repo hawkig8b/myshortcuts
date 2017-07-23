@@ -61,6 +61,7 @@ alias fromclipboard="xclip -selection clipboard -o"
 install_list=(
 
 atom #advanced text editor
+cowsay # show a cool cow message
 curl
 git
 gitk
@@ -71,6 +72,7 @@ htop #interactive process viewer
 inotify-tools #monitor file system and react to change. e.g.: while inotifywait -e modify <file or dir> ;do .... ; done
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
+synaptic #package manager
 tig #cl git tool
 tree #print directory tree structure
 uget #a gui downlaod manager
@@ -79,7 +81,8 @@ xclip #cl clipboard utility
 
 )
 
-CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
+GREE_CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
+RED_CROSS_SIGN="\e[0;31m\xe2\x9c\x98\e[0m"
 
 function install_apps {
   sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
@@ -88,9 +91,9 @@ function install_apps {
     print "=========================  installing " $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if $? -ne 0 ;then
-      print "Error Installing " $item
+      print $RED_CROSS_SIGN $item
     else
-      print $CHECK_SIGN
+      print $GREEN_CHECK_SIGN
     fi
   done
 }
