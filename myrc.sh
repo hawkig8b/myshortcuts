@@ -84,12 +84,12 @@ CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
 function install_apps {
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
-    echo "=========================  installing " $item
+    print "=========================  installing " $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if $? -ne 0 ;then
-      echo "Error Installing " $item
+      print "Error Installing " $item
     else
-      echo $CHECK_SIGN
+      print $CHECK_SIGN
     fi
   done
 }
