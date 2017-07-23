@@ -95,7 +95,7 @@ function install_apps {
   for item in $install_list ;do
     print_title_line $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
-    if $? -ne 0 ;then
+    if [$? -ne 0] ;then
       print $RED_CROSS_SIGN $item
     else
       print $GREEN_CHECK_SIGN
