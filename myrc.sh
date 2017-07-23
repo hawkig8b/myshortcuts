@@ -64,7 +64,7 @@ atom #advanced text editor
 curl
 git
 gitk
-git-gui
+gitg
 glipper #multi-item clipboard utility
 guake #drop-down terminal shell
 htop #interactive process viewer
