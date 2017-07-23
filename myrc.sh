@@ -68,8 +68,7 @@ gitg
 glipper #multi-item clipboard utility
 guake #drop-down terminal shell
 htop #interactive process viewer
-inotify-tools #monitor file system for changes and run commands in response
-#while inotifywait -e modify <file or dir> ;do .... ; done
+inotify-tools #monitor file system and react to change. e.g.: while inotifywait -e modify <file or dir> ;do .... ; done
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
 tig #cl git tool
@@ -80,6 +79,8 @@ xclip #cl clipboard utility
 
 )
 
+CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
+
 function install_apps {
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
@@ -88,7 +89,7 @@ function install_apps {
     if $? -ne 0 ;then
       echo "Error Installing " $item
     else
-      echo "\xE2\x9C\x94"
+      echo $CHECK_SIGN
     fi
   done
 }
