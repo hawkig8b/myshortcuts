@@ -85,8 +85,8 @@ function install_apps {
   for item in $install_list ;do
     echo "=========================  installing " $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
-    if [$? -ne 0] ;then 
-      echo "NOOOO"
+    if $? -ne 0 ;then
+      echo "Error Installing " $item
     else
       echo "\xE2\x9C\x94"
     fi
