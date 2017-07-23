@@ -60,8 +60,11 @@ alias fromclipboard="xclip -selection clipboard -o"
 #------------------------------------
 install_list=(
 
+atom #advanced text editor
+curl
 glipper #multi-item clipboard utility
 guake #drop-down terminal shell
+htop #interactive process viewer
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
 tree #print directory tree structure
