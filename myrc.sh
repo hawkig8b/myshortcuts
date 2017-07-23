@@ -93,12 +93,12 @@ function install_apps {
   sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
   for item in $install_list ;do
-    print_title_line $item
+    print_title_line "installing" $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
-    if [$? -ne 0] ;then
-      print $RED_CROSS_SIGN $item
+    if [ $? -eq 0 ]; then
+      echo $GREEN_CHECK_SIGN
     else
-      print $GREEN_CHECK_SIGN
+      echo $RED_CROSS_SIGN
     fi
   done
 }
