@@ -62,11 +62,15 @@ install_list=(
 
 atom #advanced text editor
 curl
+git
+gitk
+git-gui
 glipper #multi-item clipboard utility
 guake #drop-down terminal shell
 htop #interactive process viewer
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
+tig #cl git tool
 tree #print directory tree structure
 uget #a gui downlaod manager
 unp #cl unzip utility
