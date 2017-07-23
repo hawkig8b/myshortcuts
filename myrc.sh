@@ -86,9 +86,9 @@ function install_apps {
     echo "=========================  installing " $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if [$? -ne 0] ;then 
-      printf "NOOOO"
+      echo "NOOOO"
     else
-      printf "\r\xE2\x9C\x94"
+      echo "\xE2\x9C\x94"
     fi
   done
 }
