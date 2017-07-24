@@ -54,7 +54,8 @@ alias ppjson='python -m json.tool'
 alias cnt="wc -l"
 alias toclipboard="xclip -selection c"
 alias fromclipboard="xclip -selection clipboard -o"
-
+alias tmuxcp="tmux show-buffer | toclipboard"
+#usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard 
 
 
 #------------------------------------
@@ -70,6 +71,7 @@ glipper #multi-item clipboard utility
 guake #drop-down terminal shell
 htop #interactive process viewer
 inotify-tools #monitor file system and react to change. e.g.: while inotifywait -e modify <file or dir> ;do .... ; done
+lolcat #colorful output
 regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
 synaptic #package manager
