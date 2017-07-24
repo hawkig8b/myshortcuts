@@ -74,6 +74,7 @@ regexxer #a gui-application to search text and replace in-place using regex.
 silversearcher-ag #cl regex search
 synaptic #package manager
 tig #cl git tool
+tmux #termial tool
 tree #print directory tree structure
 uget #a gui downlaod manager
 unp #cl unzip utility
@@ -86,7 +87,7 @@ RED_CROSS_SIGN="\e[0;31m\xe2\x9c\x98\e[0m"
 
 
 function print_title_line {
-  echo "=================== ${@} ========================"
+  print "=================== ${@} ========================"
 }
 
 function install_apps {
@@ -97,9 +98,9 @@ function install_apps {
     print_title_line "installing" $item
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if [ $? -eq 0 ]; then
-      echo $GREEN_CHECK_SIGN
+      echo $GREEN_CHECK_SIGN "DONE"
     else
-      echo $RED_CROSS_SIGN
+      echo $RED_CROSS_SIGN "NOT SUCCESSFUL"
     fi
   done
 }
