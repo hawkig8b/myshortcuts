@@ -91,7 +91,7 @@ function install_apps {
   sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   for item in $install_list ;do
     echo -n "installing" $item "... "
-    sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
+    sudo apt-get install $item -y  >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if [ $? -eq 0 ]; then
       echo $GREEN_CHECK_SIGN
     else
