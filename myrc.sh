@@ -82,7 +82,7 @@ xclip #cl clipboard utility
 
 )
 
-GREE_CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
+GREEN_CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
 RED_CROSS_SIGN="\e[0;31m\xe2\x9c\x98\e[0m"
 
 
