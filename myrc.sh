@@ -85,22 +85,17 @@ xclip #cl clipboard utility
 GREEN_CHECK_SIGN="\e[0;32m\xE2\x9C\x94\e[0m"
 RED_CROSS_SIGN="\e[0;31m\xe2\x9c\x98\e[0m"
 
-
-function print_title_line {
-  print "=================== ${@} ========================"
-}
-
 function install_apps {
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
-  print_title_line "Updating the apt index"
+  echo "Updating the apt index"
   sudo apt-get update >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
   for item in $install_list ;do
-    print_title_line "installing" $item
+    echo -n "installing" $item "... "
     sudo apt-get install $item >>/tmp/install_apps_out.log 2>>/tmp/install_apps_err.log
     if [ $? -eq 0 ]; then
-      echo $GREEN_CHECK_SIGN "DONE"
+      echo $GREEN_CHECK_SIGN
     else
-      echo $RED_CROSS_SIGN "NOT SUCCESSFUL"
+      echo $RED_CROSS_SIGN
     fi
   done
 }
