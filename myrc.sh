@@ -37,6 +37,7 @@ cd -
 alias gits='git status'
 alias gitl='git log --decorate --oneline --graph'
 alias gitco='git checkout'
+alias gitca='git commit --amend'
 alias gitd='git diff --color-words'
 alias gitdh='git diff HEAD --color-words'
 alias gitds='git diff --staged --color-words'
@@ -44,6 +45,7 @@ alias gitpr='git pull --rebase'
 alias gitss='git stash save'
 alias gitsp='git stash pop'
 alias gitsu='git submodule update --rebase --remote --recursive --init'
+alias gitpg='git push origin HEAD:refs/for/master'
 
 #gradle
 alias gwb='./gradlew build -Dorg.gradle.daemon=true'
