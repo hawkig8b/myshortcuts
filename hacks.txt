@@ -1,4 +1,4 @@
-Disable the following ubuntu shortcuts that interfere with intellij shortcuts:
+*Disable the following ubuntu shortcuts that interfere with intellij shortcuts:
 
         Disable the Shade window action, assigned to Ctrl + Alt + S (Settings dialog)
         Change or disable the Lock Screen action, assigned to Ctrl + Alt + L (Reformat code)
@@ -7,4 +7,8 @@ Disable the following ubuntu shortcuts that interfere with intellij shortcuts:
         Disable the Move window action, assigned to Alt + F7 (Find usages)
         Change or disable the Resize window action, assigned to Alt + F8 (Evaluate expression)
 
+
+*Set different languages for keyboards attached
+    xinput -list | grep key
+    setxkbmap -device  ?  -layout us/de/
 
