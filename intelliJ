@@ -1,0 +1,10 @@
+Disable the following ubuntu shortcuts that interfere with intellij shortcuts:
+
+        Disable the Shade window action, assigned to Ctrl + Alt + S (Settings dialog)
+        Change or disable the Lock Screen action, assigned to Ctrl + Alt + L (Reformat code)
+        Change or disable the Launch terminal action, assigned to Ctrl + Alt + T (Surround with)
+        Change or disable the Switch to workspace action, assigned to Ctrl + Alt + Arrow Keys (Navigation)
+        Disable the Move window action, assigned to Alt + F7 (Find usages)
+        Change or disable the Resize window action, assigned to Alt + F8 (Evaluate expression)
+
+
