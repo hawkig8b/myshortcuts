@@ -49,6 +49,8 @@ alias gitsu='git submodule update --rebase --remote --recursive --init'
 alias gitpg='git push origin HEAD:refs/for/master'
 
 #gradle
+alias gwbNoCheck='./gradlew build -x checkstyleMain -x checkstyleTest'
+alias gwcbNoCheck='./gradlew clean build -x checkstyleMain -x checkstyleTest'
 alias gwb='./gradlew build -Dorg.gradle.daemon=true'
 alias gwcb='./gradlew clean build -Dorg.gradle.daemon=true'
 
