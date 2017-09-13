@@ -49,12 +49,13 @@ alias gitsu='git submodule update --rebase --remote --recursive --init'
 alias gitpg='git push origin HEAD:refs/for/master'
 
 #gradle
-alias gwbNoCheck='./gradlew build -x checkstyleMain -x checkstyleTest'
-alias gwcbNoCheck='./gradlew clean build -x checkstyleMain -x checkstyleTest'
-alias gwb='./gradlew build -Dorg.gradle.daemon=true'
-alias gwcb='./gradlew clean build -Dorg.gradle.daemon=true'
+alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true'
+alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true'
+alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true'
+alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true'
 
 #-------------------- Miscellaneous
+alias cur_dir_size='du -sh file_path'
 alias ppjson='python -m json.tool'
 alias cnt="wc -l"
 alias toclipboard="xclip -selection c"
