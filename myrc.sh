@@ -55,7 +55,7 @@ alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true'
 alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true'
 
 #-------------------- Miscellaneous
-alias cur_dir_size='du -sh file_path'
+alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
 alias cnt="wc -l"
 alias toclipboard="xclip -selection c"
