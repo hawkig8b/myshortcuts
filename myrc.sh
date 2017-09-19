@@ -58,8 +58,8 @@ alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
 alias cnt="wc -l"
-alias toclipboard="xclip -selection c"
-alias fromclipboard="xclip -selection clipboard -o"
+alias pbcopy="xclip -selection c"
+alias pbpaste="xclip -selection clipboard -o"
 alias tmuxcp="tmux show-buffer | toclipboard"
 #usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard 
 
