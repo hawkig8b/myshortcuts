@@ -53,6 +53,7 @@ alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daem
 alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
 alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
 alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
+alias dcu='./gradlew dCU -Plocal=true'
 
 #-------------------- Miscellaneous
 alias cur_dir_size='du -sh .'
