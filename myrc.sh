@@ -32,8 +32,8 @@ alias apti='sudo apt install'
 
 #-------------------- Git
 cd $MYRC_HOME
-git config user.name "hawkig8b"
-git config user.email "hawkig8b@gmail.com"
+#git config user.name "hawkig8b"
+#git config user.email "hawkig8b@gmail.com"
 cd -
 alias gits='git status'
 alias gitl='git log --decorate --oneline --graph'
