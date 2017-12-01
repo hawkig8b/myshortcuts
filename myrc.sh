@@ -48,14 +48,6 @@ alias gitsp='git stash pop'
 alias gitsu='git submodule update --rebase --remote --recursive --init'
 alias gitpg='git push origin HEAD:refs/for/master'
 
-#gradle
-alias gdcu='./gradlew dCU -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
-alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
-alias dcu='./gradlew dCU -Plocal=true'
-
 #-------------------- Miscellaneous
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
@@ -143,3 +135,10 @@ alias bettyStopLocalUI="docker ps | grep -C 0 build | tee /dev/tty  | awk '{prin
 alias bettyStartLocalUI="cd $BETTY_HOME/betty_orderfulfillment_ui/ui/ && ./docker-gulp.sh serve"
 alias updatecontainers="cd /home/nvd/fixstuff/betty_build_support && git pull --rebase &&
 cd /home/nvd/fixstuff/betty_build_support/etc/docker-compose && docker-compose pull"
+
+#gradle
+alias gdcu='./gradlew dCU -Plocal=true -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
+alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
+alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
+alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
+alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
