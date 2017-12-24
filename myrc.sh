@@ -55,8 +55,19 @@ alias cnt="wc -l"
 alias pbcopy="xclip -selection c"
 alias pbpaste="xclip -selection clipboard -o"
 alias tmuxcp="tmux show-buffer | toclipboard"
-#usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard 
+#usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
 
+
+#------------------------ to be executed with every bash startup
+
+function shouldUpdate {
+  read -q "doUpdate?Run the update?"
+  echo "\n"
+  if [ $doUpdate = "y" ]; then
+    update;
+    upgrade_oh_my_zsh;
+  fi
+}
 
 #------------------------------------
 install_list=(
@@ -142,3 +153,7 @@ alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daem
 alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
 alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
 alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
+
+
+#========================================= Run after reading everything
+shouldUpdate

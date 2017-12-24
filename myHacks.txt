@@ -12,3 +12,32 @@
     xinput -list | grep key
     setxkbmap -device  ?  -layout us/de/
 
+
+
+=== Compress PDF
+pdf2ps x.pdf
+ps2pdf x.ps
+
+=== combin PDFs
+pdfunite 1.pdf 2.pdf ... n.pdf out.pdf
+
+=== extract pages out of pdf
+pdftk full.pdf cat 2-5 output out.pdf
+
+=== Making bootable USB Stick from .iso
+#sudo umount /dev/sdc1
+#sudo dd if=ubuntu-16.04.2-desktop-amd64.iso of=/dev/sdc bs=1M
+#sudo sync
+
+=== Config ubuntu home folders to dropbox
+edit ~/.config/user-dirs.dirs
+
+=== execute commands on files with specific name pattern
+find . -name "*.tex" -exec echo {} \;   // give found files in separate calls to program invoked by exec
+find . -name "*.tex" -exec echo {} +    // give found files all in one call to the program invoked by exec
+
+
+=== variety background
+navida2b q-p
+
+
