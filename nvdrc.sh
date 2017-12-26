@@ -60,11 +60,9 @@ alias tmuxcp="tmux show-buffer | toclipboard"
 
 
 function tryUpdating {
-
-  lastNvdshUpdated=$(cat .lastUpdatedDay)
-  [[ $(date+%y%m%d) = $(cat .lastUpdatedDay)  ]] &&
+  [[ $(date+%y%m%d) = $(cat $NVDSH_HOME/.lastUpdatedDay)  ]] &&
   askUpdate &&
-  echo $(date +%y%m%d) > $ZSH_HOME/.lastUpdatedDay
+  echo $(date +%y%m%d) > $NVDSH_HOME/.lastUpdatedDay
 }
 
 function askUpdate {
@@ -74,6 +72,8 @@ function askUpdate {
     echo 'updating nvdsh' && syncdown
     echo 'updating apt' && update
     upgrade_oh_my_zsh;
+  else
+    return 1
   fi
 }
 
