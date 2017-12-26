@@ -3,7 +3,7 @@
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
 MYRC_HOME=${0:a:h}
-alias myrc="nano -c $MYRC_HOME/myrc.sh && source $MYRC_HOME/myrc.sh && syncup"
+alias myrc="nano -c $MYRC_HOME/myrc.sh && syncup && source $MYRC_HOME/myrc.sh"
 alias myhacks="nano -c $MYRC_HOME/myHacks.txt"
 alias syncdown="cd $MYRC_HOME && git pull --rebase ; cd -"
 alias syncup="cd $MYRC_HOME && git add myrc.sh && git commit -m 'syncing myrc.sh' && git push origin master; cd -"
@@ -64,6 +64,7 @@ function shouldUpdate {
   read -q "doUpdate?Run the update?"
   echo "\n"
   if [ $doUpdate = "y" ]; then
+    echo 'updating nvdsh' && syncdown
     update;
     upgrade_oh_my_zsh;
   fi
@@ -156,6 +157,5 @@ alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build
 
 
 #========================================= Run after reading everything
-echo TODO: Show my banner
-syncdown
+echo TODO: $fg[yellow] Show my banner
 shouldUpdate
