@@ -2,11 +2,11 @@
 
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
-MYRC_HOME=${0:a:h}
-alias myrc="nano -c $MYRC_HOME/myrc.sh && syncup && source $MYRC_HOME/myrc.sh"
-alias myhacks="nano -c $MYRC_HOME/myHacks.txt"
-alias syncdown="cd $MYRC_HOME && git pull --rebase ; cd -"
-alias syncup="cd $MYRC_HOME && git add myrc.sh && git commit -m 'syncing myrc.sh' && git push origin master; cd -"
+NVDSH_HOME=${0:a:h}
+alias nvdrc="nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh"
+alias myhacks="nano -c $NVDSH_HOME/myHacks.txt"
+alias syncdown="cd $NVDSH_HOME && git pull --rebase ; cd -"
+alias syncup="cd $NVDSH_HOME && git add nvdrc.sh && git commit -m 'syncing nvdrc.sh' && git push origin master; cd -"
 
 
 #-------------------- ls
@@ -31,7 +31,7 @@ alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dis
 alias apti='sudo apt install'
 
 #-------------------- Git
-cd $MYRC_HOME
+cd $NVDSH_HOME
 #git config user.name "hawkig8b"
 #git config user.email "hawkig8b@gmail.com"
 cd -
@@ -157,5 +157,5 @@ alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build
 
 
 #========================================= Run after reading everything
-cat $MYRC_HOME/banner.txt
+cat $NVDSH_HOME/banner.txt
 shouldUpdate
