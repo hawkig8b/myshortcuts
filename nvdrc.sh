@@ -60,7 +60,7 @@ alias tmuxcp="tmux show-buffer | toclipboard"
 
 
 function tryUpdating {
-  [[ $(date+%y%m%d) = $(cat $NVDSH_HOME/.lastUpdatedDay)  ]] &&
+  [[ $(date +%y%m%d) = $(cat $NVDSH_HOME/.lastUpdatedDay)  ]] &&
   askUpdate &&
   echo $(date +%y%m%d) > $NVDSH_HOME/.lastUpdatedDay
 }
