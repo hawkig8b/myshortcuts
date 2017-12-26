@@ -59,14 +59,20 @@ alias tmuxcp="tmux show-buffer | toclipboard"
 #usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
 
 
-#------------------------ to be executed with every bash startup
+function tryUpdating {
 
-function shouldUpdate {
+  lastNvdshUpdated=$(cat .lastUpdatedDay)
+  [[ $(date+%y%m%d) = $(cat .lastUpdatedDay)  ]] &&
+  askUpdate &&
+  echo $(date +%y%m%d) > $ZSH_HOME/.lastUpdatedDay
+}
+
+function askUpdate {
   read -q "doUpdate?Run the update?"
   echo "\n"
   if [ $doUpdate = "y" ]; then
     echo 'updating nvdsh' && syncdown
-    update;
+    echo 'updating apt' && update
     upgrade_oh_my_zsh;
   fi
 }
@@ -159,4 +165,4 @@ alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build
 
 #========================================= Run after reading everything
 cat $NVDSH_HOME/banner.txt
-shouldUpdate
+tryUpdating
