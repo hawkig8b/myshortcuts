@@ -157,5 +157,5 @@ alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build
 
 
 #========================================= Run after reading everything
-echo TODO: $fg[yellow] Show my banner
+echo TODO: Show my banner
 shouldUpdate
