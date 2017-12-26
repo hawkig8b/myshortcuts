@@ -27,7 +27,7 @@ alias back='cd "$OLDPWD"'
 #alias back="cd -"
 
 #-------------------- Apt
-alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get upgrade && sudo apt autoremove -y'
+alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade ; sudo apt autoremove -y'
 alias apti='sudo apt install'
 
 #-------------------- Git
