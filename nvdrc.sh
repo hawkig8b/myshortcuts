@@ -3,7 +3,7 @@
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
 NVDSH_HOME=${0:a:h}
-alias gonvdsh="cd $NVDSH_HOM"
+alias gonvdsh="cd $NVDSH_HOME"
 alias nvdrc="nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh"
 alias myhacks="nano -c $NVDSH_HOME/myHacks.txt"
 alias syncdown="gonvdsh && git pull --rebase ; cd -"
