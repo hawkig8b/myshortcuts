@@ -52,6 +52,7 @@ alias gitpg='git push origin HEAD:refs/for/master'
 #-------------------- Miscellaneous
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
+alias viewjson='TEMPJSON=$(mktemp).json && pbpaste | ppjson > $TEMPJSON && xdg-open $TEMPJSON'
 alias cnt="wc -l"
 alias pbcopy="xclip -selection c"
 alias pbpaste="xclip -selection clipboard -o"
