@@ -29,10 +29,6 @@ alias mkdir='mkdir -pv'
 alias back='cd "$OLDPWD"'
 #alias back="cd -"
 
-#-------------------- Apt
-alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade ; sudo apt autoremove -y'
-alias apti='sudo apt install'
-
 #-------------------- Git
 cd $NVDSH_HOME
 git config user.name "hawkig8b"
@@ -73,6 +69,7 @@ function viewjson {
 }
 
 function syncdown {
+  echo 'updating nvdsh' &&
   curdir=$PWD &&
   gonvdsh &&
   git pull --rebase &&
@@ -91,6 +88,17 @@ function syncup {
   cd $curdir
 }
 
+function updateApt {
+  echo "updating apt index ..." &&
+  sudo apt-get update &&
+  echo "upgrading apt ..." &&
+  sudo apt-get upgrade -y &&
+  echo "upgrading distribution ..." &&
+  sudo apt-get dist-upgrade
+  echo "cleaning up apt packages ..." &&
+  sudo apt autoremove -y
+}
+
 function tryUpdating {
   touch $NVDSH_HOME/.lastUpdatedDay
   [[ $(date +%y%m%d) = $(cat $NVDSH_HOME/.lastUpdatedDay)  ]] ||
@@ -101,8 +109,8 @@ function askUpdate {
   read -q "doUpdate?Run the update?"
   echo "\n"
   if [ $doUpdate = "y" ]; then
-    echo 'updating nvdsh' && syncdown
-    echo 'updating apt' && update
+    syncdown
+    updateApt
     upgrade_oh_my_zsh;
   else
     return 1
