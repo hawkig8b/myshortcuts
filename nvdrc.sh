@@ -73,7 +73,7 @@ function viewjson {
 }
 
 function syncdown {
-  curdir=$PWD
+  curdir=$PWD &&
   gonvdsh &&
   git pull --rebase &&
   source nvdrc.sh ;
@@ -81,10 +81,11 @@ function syncdown {
 }
 
 function syncup {
-  curdir=$PWD
+  curdir=$PWD &&
   gonvdsh &&
   git add . &&
-  commitMsg=$(zenity --entry --title="NVDSH" --text="Commit Message") &&
+  commitMsg=$(zenity --entry --title="NVDSH" --text="Commit Message" 2> /dev/null) &&
+  [[ ! -z "${commitMsg// }" ]] &&  #aborts if commitMsg is empty
   git commit -m $commitMsg &&
   git push origin master ;
   cd $curdir
