@@ -73,19 +73,21 @@ function viewjson {
 }
 
 function syncdown {
+  curdir=$PWD
   gonvdsh &&
   git pull --rebase &&
   source nvdrc.sh ;
-  cd -
+  cd $curdir
 }
 
 function syncup {
+  curdir=$PWD
   gonvdsh &&
   git add . &&
   commitMsg=$(zenity --entry --title="NVDSH" --text="Commit Message") &&
   git commit -m $commitMsg &&
   git push origin master ;
-  cd -
+  cd $curdir
 }
 
 cat $NVDSH_HOME/banner.txt
