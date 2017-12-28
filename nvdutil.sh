@@ -13,8 +13,12 @@ function createTmpFile {
 
 function viewjson {
   TEMPJSON=$(createTmpFile .json) &&
-  pbpaste | ppjson > $TEMPJSON &&
-  xdg-open $TEMPJSON
+  pbpaste | ppjson > $TEMPJSON
+  if [ $? -eq 0 ]; then
+    xdg-open $TEMPJSON
+  else
+    zenity --error --text="Error Processing Json" --title="NVDSH"
+  fi
 }
 
 function syncdown {

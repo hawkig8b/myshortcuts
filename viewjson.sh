@@ -7,8 +7,3 @@ source $_SCRIPTDIR/nvdutil.sh
 
 
 viewjson &
-
-[[ $? -eq 0  ]] || zenity \
---error \
---text="Error Processing Json" \
---title="ViewJson" \
