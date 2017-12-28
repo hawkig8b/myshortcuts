@@ -17,11 +17,10 @@ function viewjson {
   xdg-open $TEMPJSON
 }
 
-#alias syncdown="gonvdsh && git pull --rebase ; cd -"
 function syncdown {
   gonvdsh &&
   git pull --rebase &&
-  source nvdrc.sh ;
+  source nvdutil.sh ;
   cd -
 }
 
