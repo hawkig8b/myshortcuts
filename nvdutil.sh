@@ -18,9 +18,12 @@ function viewjson {
 }
 
 #alias syncdown="gonvdsh && git pull --rebase ; cd -"
-#alias syncup="gonvdsh && git add . && git commit -m 'pushing changes to master' && git push origin master; cd -"
-#inputStr=$(zenity --entry --title="My Title" --text="My Text:")
-#zenity --info --title="My Title" --text="Your input was: $inputStr"
+function syncdown {
+  gonvdsh &&
+  git pull --rebase &&
+  source nvdrc.sh ;
+  cd -
+}
 
 function syncup {
   gonvdsh &&
