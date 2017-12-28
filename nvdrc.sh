@@ -1,7 +1,6 @@
 #!/bin/zsh
 NVDSH_HOME=${0:a:h}
 source $NVDSH_HOME/nvdutil.sh
-alias gonvdsh="cd $NVDSH_HOME"
 
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
