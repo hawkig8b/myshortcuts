@@ -1,15 +1,12 @@
 #!/bin/zsh
 NVDSH_HOME=${0:a:h}
 source $NVDSH_HOME/nvdutil.sh
+alias gonvdsh="cd $NVDSH_HOME"
 
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
-
-alias gonvdsh="cd $NVDSH_HOME"
 alias nvdrc="nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh"
 alias myhacks="nano -c $NVDSH_HOME/myHacks.txt"
-alias syncdown="gonvdsh && git pull --rebase ; cd -"
-alias syncup="gonvdsh && git add nvdrc.sh && git commit -m 'syncing nvdrc.sh' && git push origin master; cd -"
 
 #-------------------- ls
 alias ll='ls -alF'
