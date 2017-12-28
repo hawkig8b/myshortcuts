@@ -21,13 +21,14 @@ alias l='ls -CF'
 #-------------------- Directory
 alias cd..='cd ..'
 alias ..='cd ..'
+alias up='cd ..'
 alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 alias mkdir='mkdir -pv'
-alias back='cd "$OLDPWD"'
-#alias back="cd -"
+alias back='cd -'
+alias desk='cd ~/Desktop'
 
 #-------------------- Git
 cd $NVDSH_HOME
@@ -53,6 +54,8 @@ alias ppjson='python -m json.tool'
 alias cnt="wc -l"
 alias tmuxcp="tmux show-buffer | toclipboard"
 #usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
+
+function cdl { cd $1 && ls }
 
 function createTmpFile {
   echo $(mktemp)$(echo "_")$(date +"%y%m%d-%H%M%S")$1
