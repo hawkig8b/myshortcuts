@@ -1,20 +1,20 @@
 #!/bin/zsh
+NVDSH_HOME=${0:a:h}
+source $NVDSH_HOME/nvdutil.sh
 
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
-NVDSH_HOME=${0:a:h}
+
 alias gonvdsh="cd $NVDSH_HOME"
 alias nvdrc="nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh"
 alias myhacks="nano -c $NVDSH_HOME/myHacks.txt"
 alias syncdown="gonvdsh && git pull --rebase ; cd -"
 alias syncup="gonvdsh && git add nvdrc.sh && git commit -m 'syncing nvdrc.sh' && git push origin master; cd -"
 
-
 #-------------------- ls
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 
 #-------------------- Directory
 alias cd..='cd ..'
@@ -33,8 +33,8 @@ alias apti='sudo apt install'
 
 #-------------------- Git
 cd $NVDSH_HOME
-#git config user.name "hawkig8b"
-#git config user.email "hawkig8b@gmail.com"
+git config user.name "hawkig8b"
+git config user.email "hawkig8b@gmail.com"
 cd -
 alias gits='git status'
 alias gitl='git log --decorate --oneline --graph'
@@ -52,10 +52,7 @@ alias gitpg='git push origin HEAD:refs/for/master'
 #-------------------- Miscellaneous
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
-alias viewjson='TEMPJSON=$(mktemp).json && pbpaste | ppjson > $TEMPJSON && xdg-open $TEMPJSON'
 alias cnt="wc -l"
-alias pbcopy="xclip -selection c"
-alias pbpaste="xclip -selection clipboard -o"
 alias tmuxcp="tmux show-buffer | toclipboard"
 #usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
 
