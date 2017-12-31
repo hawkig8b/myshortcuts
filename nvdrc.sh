@@ -18,6 +18,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#-------------------- colors
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+#---------------------
+function msg() {
+  echo "${RED}"$@"${NC}"
+}
+
 #-------------------- Directory
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -92,13 +101,13 @@ function syncup {
 }
 
 function updateApt {
-  echo "updating apt index ..." &&
+  msg "updating apt index ..." &&
   sudo apt-get update &&
-  echo "upgrading apt ..." &&
+  msg "upgrading apt ..." &&
   sudo apt-get upgrade -y &&
-  echo "upgrading distribution ..." &&
+  msg "upgrading distribution ..." &&
   sudo apt-get dist-upgrade
-  echo "cleaning up apt packages ..." &&
+  msg "cleaning up apt packages ..." &&
   sudo apt autoremove -y
 }
 
