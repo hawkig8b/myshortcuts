@@ -81,7 +81,7 @@ function viewjson {
 }
 
 function syncdown {
-  echo 'updating nvdsh' &&
+  msg 'updating nvdsh' &&
   curdir=$PWD &&
   gonvdsh &&
   git pull --rebase &&
