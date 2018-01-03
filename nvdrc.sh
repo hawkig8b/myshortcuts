@@ -160,4 +160,4 @@ alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.grad
 alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
 alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
 
-cat $NVDSH_HOME/banner.txt
+echo "${RED}" && cat $NVDSH_HOME/banner.txt ; echo "${NC}"
