@@ -129,6 +129,12 @@ function askUpdate {
   fi
 }
 
+function doUpdate {
+  syncdown
+  updateApt
+  upgrade_oh_my_zsh;
+}
+
 
 #====================== Betty
 export BETTY_HOME="/home/nvd/betty"
