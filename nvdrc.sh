@@ -153,7 +153,6 @@ function playsh { #TODO: CORRECT THIS
   PLAY_DIR=$(mktemp -d) &&
   echo "zsh play.sh  "> command.sh
   chmod +x command.sh
-  echo "
   touch $PLAY_DIR/{Play.sh,output.txt,erro.txt,command.sh} &&
   atom $PLAY_DIR
   while inotify-change -e MODIFY . ; do command.sh ; done
