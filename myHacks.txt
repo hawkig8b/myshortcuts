@@ -13,6 +13,11 @@
     setxkbmap -device  ?  -layout us/de/
 
 
+=== view only new docker logs
+docker logs -f --since 1m <container>   # 1m: for 1 minute
+
+=== view end of log files and follow
+cat log.log | tail -f
 
 === Compress PDF
 pdf2ps x.pdf

@@ -135,6 +135,20 @@ function doUpdate {
   upgrade_oh_my_zsh;
 }
 
+function followlog {
+  countainer=docker-search $1
+  docker logs -f --since 1m $container
+}
+
+function docker-search { #usage docker-search order service
+  #TODO : docker ps | grep orderservice | #TODO: get first word, which is id
+  #usage: followlog $(docker-search orderservice)
+}
+
+function stopcontainers {
+  #TODO
+}
+
 
 #====================== Betty
 export BETTY_HOME="/home/nvd/betty"
