@@ -136,17 +136,16 @@ function doUpdate {
 }
 
 function followlog {
-  countainer=docker-search $1
-  docker logs -f --since 1m $container
+  CONTAINER_ID=$(docker-grep $1)
+  docker logs -f --since 1m $CONTAINER_ID
 }
 
-function docker-search { #usage docker-search order service
-  #TODO : docker ps | grep orderservice | #TODO: get first word, which is id
-  #usage: followlog $(docker-search orderservice)
+function docker-grep { #usage docker-search order service
+  docker ps| grep $1 | awk '{print $1;}'
 }
 
 function stopcontainers {
-  #TODO
+  docker ps -q | xargs docker stop
 }
 
 function playsh { #TODO: CORRECT THIS
