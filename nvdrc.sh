@@ -137,7 +137,7 @@ function doUpdate {
 
 function followlog {
   CONTAINER_ID=$(docker-grep $1)
-  docker logs -f --since 1m $CONTAINER_ID
+  docker logs -f --since 10s $CONTAINER_ID
 }
 
 function docker-grep { #usage docker-search order service
