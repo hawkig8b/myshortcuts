@@ -149,6 +149,22 @@ function stopcontainers {
   #TODO
 }
 
+function playsh { #TODO: CORRECT THIS
+  PLAY_DIR=$(mktemp -d) &&
+  echo "zsh play.sh  "> command.sh
+  chmod +x command.sh
+  echo "
+  touch $PLAY_DIR/{Play.sh,output.txt,erro.txt,command.sh} &&
+  atom $PLAY_DIR
+  while inotify-change -e MODIFY . ; do command.sh ; done
+}
+
+#TODO : playkotlin, playjava, playpy, playrb, playcj, playnode
+
+#TODO : function to  gen tech user JWT and copy to clipboard
+
+#TODO : function that opens box atom for url.txt, body.json, and does the curl with minial effort (jwt already generated and in place)
+
 
 #====================== Betty
 export BETTY_HOME="/home/nvd/betty"
