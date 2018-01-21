@@ -43,6 +43,8 @@ alias desk='cd ~/Desktop'
 cd $NVDSH_HOME
 git config user.name "hawkig8b"
 git config user.email "hawkig8b@gmail.com"
+git config --global push.default simple
+
 cd -
 alias gits='git status'
 alias gitl='git log --decorate --oneline --graph'
