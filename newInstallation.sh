@@ -35,6 +35,12 @@ function install_third_party_keys {
   sudo add-apt-repository ppa:webupd8team/atom
 }
 
+
+function no_password_for_updates {
+  LINE="$USER ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/apt"
+  sudo echo $LINE | sudo tee -a /etc/sudoers > /dev/null
+}
+
 function install_apps {
   rm -f /tmp/install_apps_out.log tmp/install_apps_err.log
 
