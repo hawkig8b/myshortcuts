@@ -64,7 +64,7 @@ alias gitpg='git push origin HEAD:refs/for/master'
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
 alias cnt="wc -l"
-alias tmuxcp="tmux show-buffer | toclipboard"
+alias tmuxcp="tmux show-buffer | pbcopy"
 #usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
 
 function cdl { cd $1 && ls }

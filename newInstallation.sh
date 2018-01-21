@@ -38,7 +38,7 @@ function install_third_party_keys {
 
 function no_password_for_updates {
   LINE="$USER ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/apt"
-  sudo echo $LINE | sudo tee -a /etc/sudoers > /dev/null
+  echo $LINE | sudo tee -a /etc/sudoers > /dev/null
 }
 
 function install_apps {
