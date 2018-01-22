@@ -83,6 +83,18 @@ function viewjson {
   fi
 }
 
+
+function google {
+  Query=""
+  for arg in "$@"
+  do
+    Query="$Query%20$arg"
+  done
+  xdg-open https://www.google.com/search?q=$Query &
+  unset Query
+}
+
+
 function syncdown {
   msg 'updating nvdsh' &&
   curdir=$PWD &&
