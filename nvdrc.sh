@@ -1,4 +1,4 @@
-#!/bin/zsh
+\#!/bin/zsh
 
 NVDSH_HOME=${0:a:h}
 alias gonvdsh="cd $NVDSH_HOME"
@@ -170,6 +170,7 @@ function playsh { #TODO: CORRECT THIS
 #====================== Betty
 export BETTY_HOME="/home/nvd/betty"
 alias gobetty="cd $BETTY_HOME"
+alias goinvoice="cd $BETTY_HOME/betty_checkout_invoice"
 alias goui="cd $BETTY_HOME/betty_orderfulfillment_ui"
 alias gosecrets="cd $BETTY_HOME/betty_secrets"
 alias gopublicapi="cd $BETTY_HOME/betty_orderfulfillment_publicapi"
