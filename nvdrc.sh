@@ -60,6 +60,9 @@ alias gitsp='git stash pop'
 alias gitsu='git submodule update --rebase --remote --recursive --init'
 alias gitpg='git push origin HEAD:refs/for/master'
 
+#--------------------- Unity Directories
+function goUnityLaunchers { cd ~/.local/share/applications }
+
 #-------------------- Miscellaneous
 alias cur_dir_size='du -sh .'
 alias ppjson='python -m json.tool'
