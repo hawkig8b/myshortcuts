@@ -1,80 +1,80 @@
-\#!/bin/zsh
+#!/bin/zsh
 
 NVDSH_HOME=${0:a:h}
-alias gonvdsh="cd $NVDSH_HOME"
+function gonvdsh { cd $NVDSH_HOME }
 
-alias bashrc="nano ~/.bashrc && source ~/.bashrc"
-alias zshrc="nano ~/.zshrc && source ~/.zshrc"
-alias nvdrc="nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh"
-alias myhacks="nano -c $NVDSH_HOME/myHacks.txt"
+function bashrc { nano ~/.bashrc && source ~/.bashrc }
+function zshrc { nano ~/.zshrc && source ~/.zshrc }
+function nvdrc { nano -c $NVDSH_HOME/nvdrc.sh && syncup && source $NVDSH_HOME/nvdrc.sh }
+function myhacks { nano -c $NVDSH_HOME/myHacks.txt }
 
-alias pbcopy="xclip -selection c"
-alias pbpaste="xclip -selection clipboard -o"
-alias ppjson='python -m json.tool'
-
+function pbcopy { xclip -selection c }
+function pbpaste { xclip -selection clipboard -o }
+function ppjson= { python -m json.tool }
 
 #-------------------- ls
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+function ll { ls -alF }
+function la { ls -A }
+function l { ls -CF }
 
 #-------------------- colors
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NOCOLOR='\033[0m'
 
 #---------------------
 function msg() {
-  echo "${RED}"$@"${NC}"
+  echo "${RED}"$@"${NOCOLOR}"
 }
 
 #-------------------- Directory
-alias cd..='cd ..'
-alias ..='cd ..'
-alias up='cd ..'
-alias .2='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-alias mkdir='mkdir -pv'
-alias back='cd -'
-alias desk='cd ~/Desktop'
+function cd.. { cd .. }
+function .. { cd .. }
+function up { cd .. }
+function .2 { cd ../../ }
+function .3 { cd ../../../ }
+function .4 { cd ../../../../ }
+function .5 { cd ../../../../.. }
+function mkdir { mkdir -pv }
+function back { cd - }
+function desk { cd ~/Desktop }
 
 #-------------------- Git
 cd $NVDSH_HOME
 git config user.name "hawkig8b"
 git config user.email "hawkig8b@gmail.com"
 git config --global push.default simple
-
 cd -
-alias gits='git status'
-alias gitl='git log --decorate --oneline --graph'
-alias gitco='git checkout'
-alias gitca='git commit --amend'
-alias gitcan='git commit --amend --no-edit'
-alias gitd='git diff --color-words'
-alias gitdh='git diff HEAD --color-words'
-alias gitds='git diff --staged --color-words'
-alias gitpr='git pull --rebase'
-alias gitss='git stash save'
-alias gitsp='git stash pop'
-alias gitsu='git submodule update --rebase --remote --recursive --init'
-alias gitpg='git push origin HEAD:refs/for/master'
+
+
+#------------------- git
+
+function gits { git status }
+function gitl { git log --decorate --oneline --graph }
+function gitco { git checkout }
+function gitca { git commit --amend }
+function gitcan { git commit --amend --no-edit }
+function gitd { git diff --color-words }
+function gitdh { git diff HEAD --color-words }
+function gitds { git diff --staged --color-words }
+function gitpr { git pull --rebase }
+function gitss { git stash save }
+function gitsp { git stash pop }
+function gitsu { git submodule update --rebase --remote --recursive --init }
+function gitpg { git push origin HEAD:refs/for/master }
 
 #--------------------- Unity Directories
 function goUnityLaunchers { cd ~/.local/share/applications }
 
 #-------------------- Miscellaneous
-alias cur_dir_size='du -sh .'
-alias ppjson='python -m json.tool'
-alias cnt="wc -l"
-alias tmuxcp="tmux show-buffer | pbcopy"
-#usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this alias to copy to clipboard
+function cur_dir_size { du -sh . }
+function ppjson { python -m json.tool }
+function cnt { wc -l }
+function tmuxcp { tmux show-buffer | pbcopy }
+#usage: 1) ctrl+b,[ 2)goto start then space 3)goto end then enter  4)ctrl+b,] to paste or this function to copy to clipboard
 
 function cdl { cd $1 && ls }
 
-function createTmpFile {
-  echo $(mktemp)$(echo "_")$(date +"%y%m%d-%H%M%S")$1
-}
+function createTmpFile {  echo $(mktemp)$(echo "_")$(date +"%y%m%d-%H%M%S")$1 }
 
 function viewjson {
   TEMPJSON=$(createTmpFile .json) &&
@@ -184,36 +184,36 @@ function playsh { #TODO: CORRECT THIS
 
 #====================== Betty
 export BETTY_HOME="/home/nvd/betty"
-alias gobetty="cd $BETTY_HOME"
-alias goinvoice="cd $BETTY_HOME/betty_checkout_invoice"
-alias goui="cd $BETTY_HOME/betty_orderfulfillment_ui"
-alias gosecrets="cd $BETTY_HOME/betty_secrets"
-alias gopublicapi="cd $BETTY_HOME/betty_orderfulfillment_publicapi"
-alias goorderservice="cd $BETTY_HOME/betty_orderfulfillment_orderservice"
-alias gocombi="cd $BETTY_HOME/betty_ordermanagement_combiorder"
-alias gosearch="cd $BETTY_HOME/betty_ordermanagement_search"
-alias gomailservice="cd $BETTY_HOME/betty_orderfulfillment_mailservice"
-alias gobuildsupport="cd $BETTY_HOME/betty_build_support"
-alias gokubernetes="cd $BETTY_HOME/betty_orderfulfillment_kubernetes"
-alias godockercompose="cd $BETTY_HOME/betty_build_support/etc/docker-compose"
+function gobetty { cd $BETTY_HOME}
+function goinvoice { cd $BETTY_HOME/betty_checkout_invoice }
+function goui { cd $BETTY_HOME/betty_orderfulfillment_ui }
+function gosecrets { cd $BETTY_HOME/betty_secrets }
+function gopublicapi { cd $BETTY_HOME/betty_orderfulfillment_publicapi }
+function goorderservice { cd $BETTY_HOME/betty_orderfulfillment_orderservice }
+function gocombi { cd $BETTY_HOME/betty_ordermanagement_combiorder }
+function gosearch { cd $BETTY_HOME/betty_ordermanagement_search }
+function gomailservice { cd $BETTY_HOME/betty_orderfulfillment_mailservice }
+function gobuildsupport { cd $BETTY_HOME/betty_build_support }
+function gokubernetes { cd $BETTY_HOME/betty_orderfulfillment_kubernetes }
+function godockercompose { cd $BETTY_HOME/betty_build_support/etc/docker-compose }
 
-alias dockerup="cd $BETTY_HOME/betty_build_support/etc/docker-compose && docker-compose up -d"
+function dockerup { cd $BETTY_HOME/betty_build_support/etc/docker-compose && docker-compose up -d }
 export CQLSH_NO_BUNDLED=true
-alias bettyup="cd $BETTY_HOME/betty_build_support/etc/docker-compose && docker-compose up -d"
-alias bettyUiDown="docker ps | grep -C 0 orderfulfillment/ui:DEV |  tee /dev/tty  | head -1 | awk '{print $1;}' | xargs docker stop"
-alias bettyStopLocalUI="docker ps | grep -C 0 build | tee /dev/tty  | awk '{print $1;}' | xargs docker stop"
-alias bettyStartLocalUI="cd $BETTY_HOME/betty_orderfulfillment_ui/ui/ && ./docker-gulp.sh serve"
-alias updatecontainers="cd /home/nvd/fixstuff/betty_build_support && git pull --rebase &&
-cd /home/nvd/fixstuff/betty_build_support/etc/docker-compose && docker-compose pull"
+function bettyup { cd $BETTY_HOME/betty_build_support/etc/docker-compose && docker-compose up -d }
+function bettyUiDown { docker ps | grep -C 0 orderfulfillment/ui:DEV |  tee /dev/tty  | head -1 | awk '{print $1;}' | xargs docker stop }
+function bettyStopLocalUI { docker ps | grep -C 0 build | tee /dev/tty  | awk '{print $1;}' | xargs docker stop }
+function bettyStartLocalUI { cd $BETTY_HOME/betty_orderfulfillment_ui/ui/ && ./docker-gulp.sh serve }
+function updatecontainers { cd /home/nvd/fixstuff/betty_build_support && git pull --rebase &&
+cd /home/nvd/fixstuff/betty_build_support/etc/docker-compose && docker-compose pull }
 
 #gradle
-alias gdcu='./gradlew dCU -Plocal=true -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwb='./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwcb='./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log'
-alias gwbCheckstyle='./gradlew build -Dorg.gradle.daemon=true | tee build.log'
-alias gwcbCheckstyle='./gradlew clean build -Dorg.gradle.daemon=true | tee build.log'
-alias gwspot='./gradlew spotlessApply'
-alias doCheckstyleForReal='./gradlew checkstyleMain checkstyleTest'
-alias gwba='./gradlew spotlessApply build'
+function gdcu { ./gradlew dCU -Plocal=true -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log }
+function gwb { ./gradlew build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log }
+function gwcb { ./gradlew clean build -x checkstyleMain -x checkstyleTest -Dorg.gradle.daemon=true | tee build.log }
+function gwbCheckstyle { ./gradlew build -Dorg.gradle.daemon=true | tee build.log }
+function gwcbCheckstyle { ./gradlew clean build -Dorg.gradle.daemon=true | tee build.log }
+function gwspot { ./gradlew spotlessApply }
+function doCheckstyleForReal { ./gradlew checkstyleMain checkstyleTest }
+function gwba { ./gradlew spotlessApply build }
 
-echo "${RED}" && cat $NVDSH_HOME/banner.txt ; echo "${NC}"
+echo "${RED}" && cat $NVDSH_HOME/banner.txt ; echo "${NOCOLOR}"
